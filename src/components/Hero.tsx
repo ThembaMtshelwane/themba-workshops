@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import heroImage from "../assets/hero-stars.webp";
+// import heroImage from "../assets/hero-stars.webp";
 
 const Hero = () => {
   return (
@@ -9,12 +9,12 @@ const Hero = () => {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div
+        {/* <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-linear-to-b from-background/60 via-background/40 to-background" />
-        </div>
+        </div> */}
 
         {/* <StarField /> */}
 
@@ -22,7 +22,7 @@ const Hero = () => {
           <div>
             <div className="inline-flex items-center gap-2 text-primary/80 text-sm font-mono mb-6 tracking-widest">
               <span className="w-8 h-px bg-primary/50" />
-              ANNO MMXXIV
+              {/* ANNO MMXXIV */}
               <span className="w-8 h-px bg-primary/50" />
             </div>
           </div>

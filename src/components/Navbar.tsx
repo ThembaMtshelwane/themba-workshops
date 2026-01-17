@@ -18,7 +18,7 @@ const Navbar = () => {
               </svg>
             </div>
             <span className="text-xl font-semibold tracking-wide text-foreground group-hover:text-primary transition-colors">
-              Stellar Archive
+              Themba Workshops
             </span>
           </Link>
 
