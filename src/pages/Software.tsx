@@ -12,24 +12,38 @@ const Software = () => {
     readTime: "8 min read",
     body: "Something long",
   };
+
   return (
-    <section className="w-full border border-white flex flex-col gap-8 ">
-      <div className="w-full border border-red-500 h-50">Banner</div>
+    <section className="w-full flex flex-col gap-12  bg-slate-950 text-white min-h-screen">
+      <div className="relative w-full container mx-auto flex items-center justify-center bg-card/50 backdrop-blur-2xl">
+        <div className="relative z-10 w-full space-y-2 p-8 md:p-12 rounded-b-2xl  backdrop-blur-md shadow-2xl flex flex-col justify-center items-center text-center">
+          <p className="text-primary/70 text-sm">Currently working on:</p>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-linear-to-b from-white to-white/50">
+            AWS
+          </h1>
+          <h3 className="text-lg md:text-xl font-light text-blue-100/80 max-w-md">
+            AWS Cloud Practitioner Certification.
+          </h3>
+        </div>
+      </div>
+
+      {/* Series Section */}
       <div className="container mx-auto px-4">
-        <h2 className="mb-2">Series</h2>
+        <h2 className="text-2xl font-semibold mb-6 border-l-4 border-primary/70   pl-4">
+          Series
+        </h2>
         <div className="flex gap-4">
           <SeriesCard />
         </div>
       </div>
 
+      {/* Articles Section */}
       <div className="container mx-auto px-4">
-        <h2 className="mb-2">Articles</h2>
-        <div className="grid lg:grid-cols-2 gap-4">
-          <ArticleCard article={article} />
-          <ArticleCard article={article} />
-          <ArticleCard article={article} />
-          <ArticleCard article={article} />
-          <ArticleCard article={article} />
+        <h2 className="text-2xl font-semibold mb-6 border-l-4 border-primary/70 pl-4">
+          Articles
+        </h2>
+        <div className="grid lg:grid-cols-2 gap-6">
+          <ArticleCard article={article} /> 
         </div>
       </div>
     </section>
