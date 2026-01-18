@@ -1,11 +1,7 @@
-import Navbar from "./Navbar";
-// import heroImage from "../assets/hero-stars.webp";
 
 const Hero = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
-
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

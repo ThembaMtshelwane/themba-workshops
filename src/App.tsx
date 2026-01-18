@@ -1,10 +1,14 @@
-import Hero from "./components/Hero";
+import { Route, Routes } from "react-router";
+import MainLayout from "./layout/MainLayout";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <Hero />
-    </>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 
