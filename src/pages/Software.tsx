@@ -1,4 +1,5 @@
 import ArticleCard from "../components/ArticleCard";
+import SeriesCard from "../components/SeriesCard";
 
 const Software = () => {
   const article = {
@@ -12,12 +13,18 @@ const Software = () => {
     body: "Something long",
   };
   return (
-    <section className="w-full border border-white flex flex-col gap-4 ">
+    <section className="w-full border border-white flex flex-col gap-8 ">
       <div className="w-full border border-red-500 h-50">Banner</div>
-      <div className="w-full border border-blue-500 h-50">Series Section</div>
-      <div>
-        <h3>Articles</h3>
-        <div className="flex flex-col gap-2">
+      <div className="container mx-auto px-4">
+        <h2 className="mb-2">Series</h2>
+        <div className="flex gap-4">
+          <SeriesCard />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4">
+        <h2 className="mb-2">Articles</h2>
+        <div className="grid lg:grid-cols-2 gap-4">
           <ArticleCard article={article} />
           <ArticleCard article={article} />
           <ArticleCard article={article} />
