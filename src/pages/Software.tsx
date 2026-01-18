@@ -3,7 +3,7 @@ const Software = () => {
     <section className="">
       <div className=" mx-auto max-w-187.5 text-center">
         <h1 className="text-7xl">AWS SERIES COMING SOON</h1>
-        <p className="text-lg">
+        <p className="text-lg px-2">
           Here I will be documenting my journey pursuing the AWS Cloud
           Practitioner Certificate and the AWS Solution Architect Associate
           Certificate.
