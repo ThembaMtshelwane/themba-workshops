@@ -5,7 +5,7 @@ const MainLayout = () => {
   return (
     <section>
       <Navbar />
-      <main>
+      <main className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <Outlet />
       </main>
     </section>
