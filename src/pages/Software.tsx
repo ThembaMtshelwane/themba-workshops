@@ -1,14 +1,14 @@
+import InProgress from "./InProgress";
+
 const Software = () => {
   return (
     <section className="">
-      <div className=" mx-auto max-w-187.5 text-center">
-        <h1 className="text-7xl">AWS SERIES COMING SOON</h1>
-        <p className="text-lg px-2">
-          Here I will be documenting my journey pursuing the AWS Cloud
-          Practitioner Certificate and the AWS Solution Architect Associate
-          Certificate.
-        </p>
-      </div>
+      <InProgress
+        title={"AWS SERIES COMING SOON"}
+        summary={
+          "Here I will be documenting my journey pursuing the AWS Cloud Practitioner Certificate and the AWS Solution Architect Associate Certificate."
+        }
+      />
     </section>
   );
 };

@@ -1,16 +1,14 @@
-
+import InProgress from "./InProgress";
 
 const Electrical = () => {
   return (
     <section className="">
-      <div className=" mx-auto max-w-187.5 text-center">
-        <h1 className="text-7xl">DESIGNS COMING SOON</h1>
-        <p className="text-lg px-2">
-         Automation projects and Signal and Sytems projects.
-        </p>
-      </div>
+      <InProgress
+        title={"DESIGNS COMING SOON"}
+        summary={" Automation projects and Signal and Sytems projects."}
+      />
     </section>
   );
-}
+};
 
-export default Electrical
+export default Electrical;
