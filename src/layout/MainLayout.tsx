@@ -5,7 +5,7 @@ const MainLayout = () => {
   return (
     <section>
       <Navbar />
-      <main className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <main className="mt-22 relative">
         <Outlet />
       </main>
     </section>
