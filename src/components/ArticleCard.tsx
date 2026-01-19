@@ -1,13 +1,5 @@
 import { Link } from "react-router";
-
-interface IArticle {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-}
+import type { IArticle } from "../types/article";
 
 type ArticleCardProps = {
   article: IArticle;

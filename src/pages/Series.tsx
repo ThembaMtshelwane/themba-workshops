@@ -1,17 +1,9 @@
 import { Link } from "react-router";
 import ArticleCard from "../components/ArticleCard";
 import { ArrowLeft } from "lucide-react";
+import { article } from "../types/article";
 
 const Series = () => {
-  const article = {
-    id: "1",
-    slug: "what-is-cloud-computing",
-    title: "What is Cloud Computing?",
-    excerpt: "Exploring cloud computing and it relates to clients",
-    date: "January 19, 2026",
-    readTime: "1 min read",
-  };
-
   return (
     <div className="container mx-auto">
       <div className="relative w-full container mx-auto flex items-center justify-center bg-card/50 backdrop-blur-2xl cursor-default">

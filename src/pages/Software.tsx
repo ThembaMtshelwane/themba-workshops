@@ -1,16 +1,8 @@
 import ArticleCard from "../components/ArticleCard";
 import SeriesCard from "../components/SeriesCard";
+import { article } from "../types/article";
 
 const Software = () => {
-  const article = {
-    id: "1",
-    slug: "what-is-cloud-computing",
-    title: "What is Cloud Computing?",
-    excerpt: "Exploring cloud computing and it relates to clients",
-    date: "January 19, 2026",
-    readTime: "1 min read",
-  };
-
   return (
     <section className="w-full flex flex-col gap-12  bg-slate-950 text-white min-h-screen">
       {/* Banner */}
