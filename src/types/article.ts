@@ -75,15 +75,7 @@ goes down, your data remains safe.
 ---
 
 ## 3. On-Premise vs. Cloud Computing
-
-| Feature | On-Premise | Cloud Computing |
-|:--------|:-----------|:----------------|
-| **Initial Cost** | High (hardware, setup) | Low (pay-as-you-go) |
-| **Scalability** | Weeks to months | Minutes to hours |
-| **Maintenance** | Internal team required | Provider handles it |
-| **Accessibility** | Limited to location | Accessible anywhere |
-| **Reliability** | Single point of failure | Built-in redundancy |
-
+![](/article-1.webp)
 ---
 
 ## Key Takeaways
