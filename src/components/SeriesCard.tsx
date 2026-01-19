@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const SeriesCard = () => {
   return (
     <Link
-      to={`series/${"clf-c02"}`}
+      to={`/software/${"clf-c02"}`}
       className="group celestial-border rounded-lg p-6 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all block min-w-62.5 "
     >
       <h3 className="text-center text-foreground group-hover:text-primary transition-colors">
