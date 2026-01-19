@@ -32,28 +32,26 @@ const PostDetail = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background">
-        <main className="pt-32 pb-20">
-          <div className="container mx-auto px-6 text-center">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Post Not Found
-            </h1>
-            <p className="text-muted-foreground mb-8">
-              The article you're looking for doesn't exist.
-            </p>
-            <Link
-              to="/software/clf-c02"
-              className="text-primary hover:text-star-amber transition-colors"
-            >
-              Return to Archive
-            </Link>
-          </div>
-        </main>
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            Post Not Found
+          </h1>
+          <p className="text-muted-foreground mb-8">
+            The article you're looking for doesn't exist.
+          </p>
+          <Link
+            to="/software/clf-c02"
+            className="text-primary hover:text-star-amber transition-colors"
+          >
+            Return to Archive
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto mt-30 px-6 relative">
+    <div className="container mx-auto mt-30 mb-20 px-6 relative">
       <article className="max-w-3xl mx-auto relative z-10">
         <Link
           to="/software/clf-c02"
