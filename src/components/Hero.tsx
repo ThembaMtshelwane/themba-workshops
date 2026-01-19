@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <>
+    <section className=" min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Hero Section */}
 
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -46,7 +46,7 @@ const Hero = () => {
             <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
           </div>
         </div> */}
-    </>
+    </section>
   );
 };
 
