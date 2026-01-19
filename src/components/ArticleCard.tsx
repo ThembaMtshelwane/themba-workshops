@@ -7,7 +7,6 @@ interface IArticle {
   excerpt: string;
   date: string;
   readTime: string;
-  body: string;
 }
 
 type ArticleCardProps = {

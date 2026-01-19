@@ -4,13 +4,11 @@ import SeriesCard from "../components/SeriesCard";
 const Software = () => {
   const article = {
     id: "1",
-    slug: "building-type-safe-apis-with-trpc",
-    title: "Building Type-Safe APIs with tRPC",
-    excerpt:
-      "Exploring how tRPC eliminates the need for REST or GraphQL by providing end-to-end type safety between your client and server.",
-    date: "January 15, 2024",
-    readTime: "8 min read",
-    body: "Something long",
+    slug: "what-is-cloud-computing",
+    title: "What is Cloud Computing?",
+    excerpt: "Exploring cloud computing and it relates to clients",
+    date: "January 19, 2026",
+    readTime: "1 min read",
   };
 
   return (
