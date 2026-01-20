@@ -13,7 +13,7 @@ export const article = {
   title: "What is Cloud Computing?",
   excerpt: "Exploring cloud computing and it relates to clients",
   date: "January 19, 2026",
-  readTime: "3 min read",
+  readTime: "2 min read",
 };
 
 export const POST_CONTENT = `
@@ -103,7 +103,7 @@ export const allPosts: Record<
     title: "What is Cloud Computing?",
     excerpt: "Exploring cloud computing and how it relates to clients",
     date: "January 19, 2026",
-    readTime: "3 min read",
+    readTime: "2 min read",
     category: "Software Dev",
     author: "Your Name",
     tags: ["Cloud", "AWS", "Infrastructure"],
