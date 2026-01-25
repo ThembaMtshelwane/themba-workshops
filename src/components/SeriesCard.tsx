@@ -9,9 +9,9 @@ const SeriesCard = () => {
       <h3 className="text-center text-foreground group-hover:text-primary transition-colors">
         AWS Cloud Practitioner Certification
       </h3>
-      <p className="text-sm text-muted-foreground">1 posts</p>
+      <p className="text-sm text-muted-foreground">2 posts</p>
       <p className="text-xs text-muted-foreground">
-        Last update: 19 Januray 2024
+        Last update: 26 Januray 2026
       </p>
     </Link>
   );
