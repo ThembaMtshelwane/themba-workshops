@@ -120,8 +120,8 @@ businesses increasingly require.
 `;
 
 export const POST_CONTENT_2 = `
-Now that we know what Cloud Computing is and the services it can provide us, now we need to
-get to know the entities that can provide these services.
+Now that we understand what Cloud Computing is and the value it brings, we need to look at the entities
+that provide these services and the core building blocks they offer.
 
 ## 1. Cloud Service Provider (CSP)
 A company that owns massive data centers filled with physical hardware and "rent" slices of that hardware to clients.
