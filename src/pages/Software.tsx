@@ -1,6 +1,6 @@
 import ArticleCard from "../components/ArticleCard";
 import SeriesCard from "../components/SeriesCard";
-import { article } from "../types/article";
+import { article, article2 } from "../types/article";
 
 const Software = () => {
   return (
@@ -35,6 +35,7 @@ const Software = () => {
         </h2>
         <div className="grid lg:grid-cols-2 gap-6">
           <ArticleCard article={article} />
+          <ArticleCard article={article2} />
         </div>
       </div>
     </section>
