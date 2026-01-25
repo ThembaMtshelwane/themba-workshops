@@ -11,7 +11,7 @@ export const article = {
   id: "1",
   slug: "what-is-cloud-computing",
   title: "What is Cloud Computing?",
-  excerpt: "Exploring cloud computing and it relates to clients",
+  excerpt: "Exploring cloud computing and it relates to clients.",
   date: "January 19, 2026",
   readTime: "2 min read",
 };
@@ -20,7 +20,7 @@ export const article2 = {
   id: "2",
   slug: "what-is-a-cloud-service-provider",
   title: "What is a Cloud Service Provider?",
-  excerpt: "Exploring cloud computing and it relates to clients",
+  excerpt: "Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized \"building blocks\".",
   date: "January 26, 2026",
   readTime: "1 min read",
 };
