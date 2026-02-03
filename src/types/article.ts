@@ -34,7 +34,7 @@ export const article3 = {
   excerpt:
     'Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized "building blocks".',
   date: "February 3, 2026",
-  readTime: "1 min read",
+  readTime: "2 min read",
 };
 
 export const POST_CONTENT = `
@@ -273,7 +273,7 @@ export const allPosts: Record<
       " Understanding the Foundation of AWS: Infrastructure and Responsibility",
     excerpt: "Exploring cloud computing and how it relates to clients",
     date: "February 3, 2026",
-    readTime: "1 min read",
+    readTime: "2 min read",
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT_3,
