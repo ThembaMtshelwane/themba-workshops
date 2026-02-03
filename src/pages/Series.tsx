@@ -23,7 +23,7 @@ const Series = () => {
         <ArrowLeft className="w-4 h-4" />
         Software Dev Home
       </Link>
-      <div className="grid lg:grid-cols-2 gap-6 mt-8 px-4 sm:px-0">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-2">
         <ArticleCard article={article3} />
         <ArticleCard article={article2} />
         <ArticleCard article={article} />
