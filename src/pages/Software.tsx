@@ -33,7 +33,7 @@ const Software = () => {
         <h2 className="text-2xl font-semibold mb-6 border-l-4 border-primary/70 pl-4">
           Articles
         </h2>
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ArticleCard article={article3} />
           <ArticleCard article={article2} />
           <ArticleCard article={article} />
