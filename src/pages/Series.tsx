@@ -24,9 +24,9 @@ const Series = () => {
         Software Dev Home
       </Link>
       <div className="grid lg:grid-cols-2 gap-6 mt-8 px-4 sm:px-0">
-        <ArticleCard article={article} />
-        <ArticleCard article={article2} />
         <ArticleCard article={article3} />
+        <ArticleCard article={article2} />
+        <ArticleCard article={article} />
       </div>
     </div>
   );

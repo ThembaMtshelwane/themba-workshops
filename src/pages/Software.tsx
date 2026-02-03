@@ -34,9 +34,9 @@ const Software = () => {
           Articles
         </h2>
         <div className="grid lg:grid-cols-2 gap-6">
-          <ArticleCard article={article} />
-          <ArticleCard article={article2} />
           <ArticleCard article={article3} />
+          <ArticleCard article={article2} />
+          <ArticleCard article={article} />
         </div>
       </div>
     </section>

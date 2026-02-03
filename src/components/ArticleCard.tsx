@@ -20,7 +20,7 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
           {article.readTime}
         </span>
       </div>
-      <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3">
+      <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3 truncate">
         {article.title}
       </h3>
       <p className="text-muted-foreground leading-relaxed">{article.excerpt}</p>

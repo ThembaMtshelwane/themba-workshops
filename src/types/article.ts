@@ -32,7 +32,7 @@ export const article3 = {
   title:
     "Understanding the Foundation of AWS: Infrastructure and Responsibility",
   excerpt:
-    'Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized "building blocks".',
+    "This covers how AWS became a global cloud leader, the hierarchical structure of its Global Infrastructure, and the Shared Responsibility Model",
   date: "February 3, 2026",
   readTime: "2 min read",
 };
@@ -180,12 +180,16 @@ scaling challenges into the world’s most comprehensive and broadly adopted clo
 This article explores the history of AWS, the physical infrastructure that powers it, and
 the security framework that keeps it safe.
 
+---
+
 ## 1. The Evolution of AWS
 In the early 2000s, Amazon realized they had become experts at building scalable,
 cost-effective data centers to handle the massive traffic of their retail site. In 2006,
 they decided to offer this "backbone" to other companies as a service. This birthed the modern
 cloud computing industry, allowing businesses to trade capital expenses (buying hardware) for
 variable expenses (paying for what you use).
+
+---
 
 ## 2. AWS Global Infrastructure
 The AWS Global Infrastructure is designed to be the most flexible and secure cloud computing
@@ -200,16 +204,21 @@ An Availability Zone is one or more discrete data centers with redundant power, 
 It is a best practice to distribute your resources across multiple AZs. This provides High Availability (HA)
 and Fault Tolerance (FT), ensuring that if one data center fails, your application remains online.
 
-
 ### Regions
 A Region is a physical location in the world where AWS clusters multiple Availability Zones. Each Region consists
 of a minimum of 3 physically separated AZs. Regions are designed to provide low-latency, fault-tolerant access to
 services for users within a specific geographic area.
 
+![](/article-3.webp)
+
+---
+
 ## 3. High Availability vs. Fault Tolerance
 While often used interchangeably, your notes highlight a key distinction:\n
 ***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy.\n
 ***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails, with zero downtime or data loss.
+
+---
 
 ## 4. The AWS Shared Responsibility Model
 Security and compliance are a "shared" effort between AWS and the customer. This model helps reduce the customer’s operational burden as AWS operates,
@@ -228,13 +237,19 @@ AWS is responsible for protecting the global infrastructure that runs all of the
 The customer is responsible for managing security requirements for their data. This includes:
 
 - Data Management: Deciding what data is stored and who has access.
-- Encryption: Implementing Client-Side or Server-Side encryption.
+- Encryption: Implementing Client-Side encryption.
 - Configuration: Managing OS updates, firewalls (Security Groups), and network configurations.
 
 
 ***The "Shared" Area***\n
 Some responsibilities depend on the specific service used. For example, if you use a managed service like Amazon RDS (database),
 AWS handles more of the "Shared" tasks like OS patching, whereas if you use EC2 (virtual servers), you are responsible for the OS yourself.
+
+---
+
+## Conclusion
+AWS provides the **Global Infrastructure** to make your applications highly available and fault-tolerant, but the **Shared Responsibility Model** ensures you remain the architect of your own security. Success in the cloud is found at the intersection of robust infrastructure and proactive management.
+
 `;
 
 export const allPosts: Record<
@@ -271,7 +286,8 @@ export const allPosts: Record<
   "understanding-the-foundation-of-aws-infrastructure-and-responsibility": {
     title:
       " Understanding the Foundation of AWS: Infrastructure and Responsibility",
-    excerpt: "Exploring cloud computing and how it relates to clients",
+    excerpt:
+      "The fundamental pillars of Amazon Web Services (AWS). This covers how AWS became a global cloud leader, the hierarchical structure of its Global Infrastructure, and the Shared Responsibility Model, which defines the security obligations between AWS  and the Customer",
     date: "February 3, 2026",
     readTime: "2 min read",
     category: "Software Dev",
