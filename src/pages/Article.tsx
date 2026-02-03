@@ -121,7 +121,7 @@ const PostDetail = () => {
             prose-tr:even:bg-secondary/20
             prose-td:py-4 prose-td:px-6 prose-td:text-foreground/90 prose-td:border-r prose-td:border-border/30 prose-td:last:border-r-0
             prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
-            prose-img:rounded-lg prose-img:shadow-lg space-y-4"
+            prose-img:rounded-lg prose-img:shadow-lg space-y-3"
           >
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}

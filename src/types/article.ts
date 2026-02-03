@@ -11,7 +11,7 @@ export const article = {
   id: "1",
   slug: "what-is-cloud-computing",
   title: "What is Cloud Computing?",
-  excerpt: "Exploring cloud computing and it relates to clients.",
+  excerpt: "Exploring cloud computing and how it relates to clients.",
   date: "January 19, 2026",
   readTime: "2 min read",
 };
@@ -20,8 +20,20 @@ export const article2 = {
   id: "2",
   slug: "what-is-a-cloud-service-provider",
   title: "What is a Cloud Service Provider?",
-  excerpt: "Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized \"building blocks\".",
+  excerpt:
+    'Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized "building blocks".',
   date: "January 26, 2026",
+  readTime: "1 min read",
+};
+
+export const article3 = {
+  id: "3",
+  slug: "understanding-the-foundation-of-aws-infrastructure-and-responsibility",
+  title:
+    "Understanding the Foundation of AWS: Infrastructure and Responsibility",
+  excerpt:
+    'Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized "building blocks".',
+  date: "February 3, 2026",
   readTime: "1 min read",
 };
 
@@ -162,6 +174,69 @@ Non-Relational (NoSQL): Great for unstructured data (like social media posts or 
 
 `;
 
+export const POST_CONTENT_3 = `
+Amazon Web Services (AWS) has evolved from an internal solution for Amazon’s own retail
+scaling challenges into the world’s most comprehensive and broadly adopted cloud platform.
+This article explores the history of AWS, the physical infrastructure that powers it, and
+the security framework that keeps it safe.
+
+## 1. The Evolution of AWS
+In the early 2000s, Amazon realized they had become experts at building scalable,
+cost-effective data centers to handle the massive traffic of their retail site. In 2006,
+they decided to offer this "backbone" to other companies as a service. This birthed the modern
+cloud computing industry, allowing businesses to trade capital expenses (buying hardware) for
+variable expenses (paying for what you use).
+
+## 2. AWS Global Infrastructure
+The AWS Global Infrastructure is designed to be the most flexible and secure cloud computing
+environment available today. It is built on three hierarchical levels:
+
+### Data Centers
+  At the most basic level, AWS infrastructure consists of physical Data Centers. These are the
+  physical buildings that house the servers, storage, and networking equipment.
+
+### Availability Zones (AZs)
+An Availability Zone is one or more discrete data centers with redundant power, networking, and connectivity.
+It is a best practice to distribute your resources across multiple AZs. This provides High Availability (HA)
+and Fault Tolerance (FT), ensuring that if one data center fails, your application remains online.
+
+
+### Regions
+A Region is a physical location in the world where AWS clusters multiple Availability Zones. Each Region consists
+of a minimum of 3 physically separated AZs. Regions are designed to provide low-latency, fault-tolerant access to
+services for users within a specific geographic area.
+
+## 3. High Availability vs. Fault Tolerance
+While often used interchangeably, your notes highlight a key distinction:\n
+***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy.\n
+***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails, with zero downtime or data loss.
+
+## 4. The AWS Shared Responsibility Model
+Security and compliance are a "shared" effort between AWS and the customer. This model helps reduce the customer’s operational burden as AWS operates,
+manages, and controls the components from the host operating system down to the physical security of the facilities.
+
+***AWS Responsibility: "Security OF the Cloud"***
+
+AWS is responsible for protecting the global infrastructure that runs all of the services offered. This includes:
+
+- Hardware: Physical servers and storage.
+- Software: The virtualization layer.
+- Networking: The physical cables and routers.
+- Facilities: The actual buildings and data centers.
+
+***Customer Responsibility: "Security IN the Cloud"***\n
+The customer is responsible for managing security requirements for their data. This includes:
+
+- Data Management: Deciding what data is stored and who has access.
+- Encryption: Implementing Client-Side or Server-Side encryption.
+- Configuration: Managing OS updates, firewalls (Security Groups), and network configurations.
+
+
+***The "Shared" Area***\n
+Some responsibilities depend on the specific service used. For example, if you use a managed service like Amazon RDS (database),
+AWS handles more of the "Shared" tasks like OS patching, whereas if you use EC2 (virtual servers), you are responsible for the OS yourself.
+`;
+
 export const allPosts: Record<
   string,
   {
@@ -181,7 +256,6 @@ export const allPosts: Record<
     date: "January 19, 2026",
     readTime: "2 min read",
     category: "Software Dev",
-    author: "Your Name",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT,
   },
@@ -191,8 +265,17 @@ export const allPosts: Record<
     date: "January 26, 2026",
     readTime: "1 min read",
     category: "Software Dev",
-    author: "Your Name",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT_2,
+  },
+  "understanding-the-foundation-of-aws-infrastructure-and-responsibility": {
+    title:
+      " Understanding the Foundation of AWS: Infrastructure and Responsibility",
+    excerpt: "Exploring cloud computing and how it relates to clients",
+    date: "February 3, 2026",
+    readTime: "1 min read",
+    category: "Software Dev",
+    tags: ["Cloud", "AWS", "Infrastructure"],
+    content: POST_CONTENT_3,
   },
 };
