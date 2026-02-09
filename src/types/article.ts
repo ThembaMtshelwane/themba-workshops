@@ -13,7 +13,7 @@ export const article = {
   title: "What is Cloud Computing?",
   excerpt: "Exploring cloud computing and how it relates to clients.",
   date: "January 19, 2026",
-  readTime: "2 min read",
+  readTime: "5 min read",
 };
 
 export const article2 = {
@@ -23,7 +23,7 @@ export const article2 = {
   excerpt:
     'Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized "building blocks".',
   date: "January 26, 2026",
-  readTime: "1 min read",
+  readTime: "4 min read",
 };
 
 export const article3 = {
@@ -34,7 +34,7 @@ export const article3 = {
   excerpt:
     "This covers how AWS became a global cloud leader, the hierarchical structure of its Global Infrastructure, and the Shared Responsibility Model",
   date: "February 3, 2026",
-  readTime: "2 min read",
+  readTime: "6 min read",
 };
 
 export const article4 = {
@@ -44,7 +44,7 @@ export const article4 = {
   excerpt:
     "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
   date: "February 9, 2026",
-  readTime: "3 min read",
+  readTime: "8 min read",
 };
 
 export const POST_CONTENT = `
@@ -107,20 +107,19 @@ goes down, your data remains safe.
 
 ## 4. Types of Cloud Computing
 
-### 1. Software as a Service (SaaS)
+- **Software as a Service (SaaS)**
 A product that is ran and managed by the service provider.
 You don't need to worry about how the service is maintained or
 how the underlying infrastructure is managed; you only need to know
 how to use the software. This is typically used by customers,
 think of Gmail as the product, you just send emails and Google - the service provider - handles the servers.
 
-### 2. Platform as a Service (PaaS)
+- **Platform as a Service (PaaS)**
 This service focuses on the deployment and the management of your apps and removes the
 responsibility of managing the underlying infrastructure (hardware and operating systems).
-This is used by developers. Think of Vercel as the platfom, you can push your code and it handles the deployment.
-AWS Elastic Beanstalk, a platform to deploy web apps without configuring the underlying EC2 instances.
+This is used by developers, think of Vercel as the platfom, you can push your code and it handles the deployment.
 
-### 3. Infrastructure as a Service (IaaS)
+- **Infrastructure as a Service (IaaS)**
 This provides the basic building blocks of cloud IT and typically provides access to networking features,
 computers (virtual or on dedicated hardware), and data storage space. It gives you the highest level of
 flexibility and management control over your IT resources. Example: Amazon EC2, virtual servers where you
@@ -137,14 +136,14 @@ businesses increasingly require.
 `;
 
 export const POST_CONTENT_2 = `
-Now that we understand what Cloud Computing is and the value it brings, we need to look at the entities
-that provide these services and the core building blocks they offer.
+Now that we understand what Cloud Computing is and the value it brings, we need to look at the
+entities that provide these services and the core building blocks they offer.
 
 ## 1. Cloud Service Provider (CSP)
-A company that owns massive data centers filled with physical hardware and "rent" slices of that hardware to clients.
-Basically provides multiple cloud services. These services can be then linked together to create
-Cloud Architecture. Cloud Providers provide access to their services via a single unified API. These
-services utilize metered billing based on usage.
+A Cloud Service Provider (CSP) is an entity that owns massive data centers filled with physical
+hardware and "rent" slices of that hardware to clients as services. These services can be then
+linked together to create Cloud Architecture. CSPs provide access to their services via a single
+unified API. These services utilize metered billing based on usage.
 
 ### The "Big Three" Providers:
   - Amazon Web Services (AWS): The market leader with the most extensive list of services.
@@ -169,7 +168,7 @@ You can create Virtual Private Clouds (VPC) to hide sensitive data from the publ
 to distribute incoming traffic so one server doesn't get overwhelmed.
 
 ### 3. Storage
-This is where the files live, data that needs tp persist even when the computer is turned off. Cloud storage is
+This is where the files live, data that needs to persist even when the computer is turned off. Cloud storage is
 very durable. Cloud providers typically store three copies of your files in different locations. 
 
 ### 4. Database
@@ -393,7 +392,7 @@ export const allPosts: Record<
     title: "What is Cloud Computing?",
     excerpt: "Exploring cloud computing and how it relates to clients",
     date: "January 19, 2026",
-    readTime: "2 min read",
+    readTime: "5 min read",
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT,
@@ -402,7 +401,7 @@ export const allPosts: Record<
     title: "What is a Cloud Service Provider?",
     excerpt: "Exploring cloud computing and how it relates to clients",
     date: "January 26, 2026",
-    readTime: "1 min read",
+    readTime: "4 min read",
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT_2,
@@ -413,7 +412,7 @@ export const allPosts: Record<
     excerpt:
       "The fundamental pillars of Amazon Web Services (AWS). This covers how AWS became a global cloud leader, the hierarchical structure of its Global Infrastructure, and the Shared Responsibility Model, which defines the security obligations between AWS  and the Customer",
     date: "February 3, 2026",
-    readTime: "2 min read",
+    readTime: "6 min read",
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT_3,
@@ -424,7 +423,7 @@ export const allPosts: Record<
     excerpt:
       "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
     date: "February 9, 2026",
-    readTime: "3 min read",
+    readTime: "8 min read",
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Infrastructure","Compute", "EC2"],
     content: POST_CONTENT_4,
