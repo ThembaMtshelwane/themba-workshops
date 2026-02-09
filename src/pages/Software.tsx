@@ -1,6 +1,6 @@
 import ArticleCard from "../components/ArticleCard";
 import SeriesCard from "../components/SeriesCard";
-import { article, article2, article3 } from "../types/article";
+import { article, article2, article3, article4 } from "../types/article";
 
 const Software = () => {
   return (
@@ -33,7 +33,8 @@ const Software = () => {
         <h2 className="text-2xl font-semibold mb-6 border-l-4 border-primary/70 pl-4">
           Articles
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
+          <ArticleCard article={article4} />
           <ArticleCard article={article3} />
           <ArticleCard article={article2} />
           <ArticleCard article={article} />

@@ -121,11 +121,34 @@ const PostDetail = () => {
             prose-tr:even:bg-secondary/20
             prose-td:py-4 prose-td:px-6 prose-td:text-foreground/90 prose-td:border-r prose-td:border-border/30 prose-td:last:border-r-0
             prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic
-            prose-img:rounded-lg prose-img:shadow-lg space-y-3"
+            prose-img:rounded-lg prose-img:shadow-lg space-y-3
+            
+            prose-ul:list-disc prose-ul:pl-5 
+    prose-ol:list-decimal prose-ol:pl-5
+    prose-li:marker:text-primary
+  
+            "
           >
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeHighlight]}
+              components={{
+                // Map 'ul' to a custom styled component
+                ul: ({ children }) => (
+                  <ul className="list-disc list-outside ml-6 mb-4 space-y-2 text-foreground/90">
+                    {children}
+                  </ul>
+                ),
+                // Map 'ol' to a custom styled component
+                ol: ({ children }) => (
+                  <ol className="list-decimal list-outside ml-6 mb-4 space-y-2 text-foreground/90">
+                    {children}
+                  </ol>
+                ),
+                li: ({ children }) => (
+                  <li className="leading-relaxed">{children}</li>
+                ),
+              }}
             >
               {post.content}
             </ReactMarkdown>

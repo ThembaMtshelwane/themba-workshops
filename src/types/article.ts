@@ -37,6 +37,16 @@ export const article3 = {
   readTime: "2 min read",
 };
 
+export const article4 = {
+  id: "4",
+  slug: "introduction-to-amazon-ec2",
+  title: "Introduction to Amazon EC2",
+  excerpt:
+    "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
+  date: "February 9, 2026",
+  readTime: "3 min read",
+};
+
 export const POST_CONTENT = `
 Imagine you have a client that requires extensive IT services and resources. You might suggest they
 buy the resources (physical servers) and hire an IT team to manage them—the On-Premise Approach. But what if there's
@@ -64,31 +74,26 @@ how Cloud Computing directly solves problems associated with it.
 The following are the major "pain points" that could arise when dealing with creating an
 IT infrastructure for a business:
 
-### 1. Capacity
-
+- **Capacity**:
 You have to guess how many resources (hardware—servers and IT team) you need up front.
 If you buy too many, you've wasted money; if you buy too few, your website crashes when it gets too
 popular. With cloud computing you pay for what you need and use.
 
-### 2. Scalability
-
+- **Scalability**:
 If there is more demand and the system needs to scale appropriately, you need to buy more hardware,
 and that could take weeks or months (ordering, shipping, installing, wiring). With cloud computing it takes
 minutes or hours to add resources.
 
-### 3. Maintenance
-
+- **Maintenance**:
 Fixing broken fans, updating security patches, and managing power bills in-house takes up time and
 money within the company. The provider handles the maintaince and security.
 
-### 4. Accessibility
-
+- **Accessibility**:
 You can only access your work from the premises or physical location of the hardware. With cloud computing
 the services are readily availble anywhere and promotes working in remote teams as long as there is a strong
 internent connection.
 
-### 5. Reliability
-
+- **Reliability**:
 There is only one source of the data/resources, and resource duplication might need more time and
 hardware. Cloud providers mirror your data across multiple global locations, so if one data center
 goes down, your data remains safe.
@@ -195,16 +200,16 @@ variable expenses (paying for what you use).
 The AWS Global Infrastructure is designed to be the most flexible and secure cloud computing
 environment available today. It is built on three hierarchical levels:
 
-### Data Centers
+### 1. Data Centers
   At the most basic level, AWS infrastructure consists of physical Data Centers. These are the
   physical buildings that house the servers, storage, and networking equipment.
 
-### Availability Zones (AZs)
+### 2. Availability Zones (AZs)
 An Availability Zone is one or more discrete data centers with redundant power, networking, and connectivity.
 It is a best practice to distribute your resources across multiple AZs. This provides High Availability (HA)
 and Fault Tolerance (FT), ensuring that if one data center fails, your application remains online.
 
-### Regions
+### 3. Regions
 A Region is a physical location in the world where AWS clusters multiple Availability Zones. Each Region consists
 of a minimum of 3 physically separated AZs. Regions are designed to provide low-latency, fault-tolerant access to
 services for users within a specific geographic area.
@@ -215,8 +220,8 @@ services for users within a specific geographic area.
 
 ## 3. High Availability vs. Fault Tolerance
 While often used interchangeably, your notes highlight a key distinction:\n
-***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy.\n
-***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails, with zero downtime or data loss.
+- ***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy.\n
+- ***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails, with zero downtime or data loss.
 
 ---
 
@@ -250,6 +255,125 @@ AWS handles more of the "Shared" tasks like OS patching, whereas if you use EC2 
 ## Conclusion
 AWS provides the **Global Infrastructure** to make your applications highly available and fault-tolerant, but the **Shared Responsibility Model** ensures you remain the architect of your own security. Success in the cloud is found at the intersection of robust infrastructure and proactive management.
 
+`;
+
+export const POST_CONTENT_4 = `
+Amazon Elastic Compute Cloud (EC2) is a core service within the AWS ecosystem that provides the 
+compute capability in the cloud. It allows users to run virtual machines (instances) on demand,
+making it a fundamental building block for many applications and services hosted on AWS.
+
+---
+
+## 1. Core Concepts: Compute & Virtualization
+Compute refers to the processing power required to run applications and perform tasks. In the context
+of cloud computing, it typically involves virtual machines (VMs) that provide CPU and RAM resources.
+EC2 instances can be easily scaled up or down based on demand, allowing for flexibility and
+cost-efficiency.
+
+---
+
+## 2. What is Amazon EC2?
+Amazon EC2 is an AWS service that provides secure, resizable compute capacity in the cloud.
+It is designed to make web-scale cloud computing easier for developers. With EC2, you can launch as
+many or as few virtual servers as you need, configure security and networking, and manage storage.
+More flexible, cost-effective, and scalable than managing traditional on premise servers. Costs are
+based on only active usage.
+
+All of this allows for faster development and deployment of applications.
+
+---
+
+## 3. How Amazon EC2 Works
+Amazon EC2 provides a web service interface that allows you to create and manage instances.
+The lifecycle of an EC2 instance revolves around three main phases:
+
+- **Launch an Instance**:\n
+When lauching an EC2 instance, you must configure two primary components: An Amazon Machine Image (AMI) and
+an Instance Type.\n
+1. An Amazon Machine Image (AMI) serves as a template for your instance, this includes the operating
+system and any additional software you want pre-installed.
+2. Instance type defines the hardware resources (CPU, RAM, storage) allocated to your instance. You
+can choose how powerful your virtual machine is based on your needs. You can choose from a variety of
+instance types optimized for different use cases (e.g., compute-optimized, memory-optimized,
+storage-optimized).\n
+
+- **Connect to Your Instance**:\n
+You can interact with your instances through various protocols depending on the OS and use case:
+1. **SSH (Secure Shell)**: For Linux instances, you can use SSH to securely connect to the command
+line of your instance.
+2. **RDP (Remote Desktop Protocol)**: For Windows instances, you can use RDP to access the graphical
+desktop environment.
+3. **EC2 Instance Connect / Systems Manager**: Modern, browser-based secure shell access without needing to manage SSH keys.
+4. **API Calls**: You can also interact with your EC2 instances programmatically using AWS SDKs or
+the AWS CLI.
+
+- **Use the EC2 Instance**:\n
+Once connected, you can install software, run applications, and manage your instance just like you
+would with a physical server. You can also use EC2 features like Elastic Block Store (EBS) for
+persistent storage and Elastic Load Balancing (ELB) to distribute traffic across multiple instances.
+
+---
+
+## 4. Amazon EC2 Instance Types
+Different EC2 Instance Types exist to help meet specific use cases and workloads. Each instance type
+offers a different combination of CPU, memory, storage, and networking capacity. This allows you
+to choose the right mix of resources for your applications.
+
+These are grouped into families based on their intended use case:
+
+- **General Purpose**: These instances provide a balanced mix of compute, memory, and networking
+resources (e.g., t3, m5). Ideal for a wide variety of workloads, including web servers, development
+environments, and small databases. Best for when workloads are uncertain.
+
+- **Compute Optimized**: High CPU-to-memory ratio for compute-intensive applications (e.g., c5).
+Ideal for compute-intesive tasks like batch processing, high-performance web servers, machine
+learning and scientific modeling.
+
+- **Memory Optimized**: High memory-to-CPU ratio for memory-intensive applications (e.g., r5).
+Ideal for in-memory databases, real-time big data analytics, streaming applications, and
+high-performance databases.
+
+- **Accelerated Computing**: These instances use hardware accelerators (GPUs), or co-processors,
+to perform functions such as floating point operations, graphics processing,
+and machine learning inference.
+
+- **Storage Optimized**: High disk throughput for storage-intensive applications (e.g., i3).
+Ideal for workloads that require high, sequential read and write access to large data sets on local
+storage, such as NoSQL databases, data warehousing, and Elasticsearch.
+
+---
+
+## 5. Amazon EC2 Pricing Models
+- **On-Demand Instances**: Only pay for the duration of when your instances are running, with no
+long-term commitments. Easy to use and ideal for short-term, spiky, or unpredictable workloads
+that cannot be interrupted. Easy to start with to figure out ypur baseline workload needs but
+can get expensive.
+
+- **Savings Plans**: Flexible pricing model that offers lower prices in exchange for a commitment to
+a consistent amount of usage (measured in $/hour) for a 1 or 3-year term. Provides savings of up to
+ 72% compared to On-Demand pricing.
+ 
+- **Reserved Instances**: Make a one-time payment for a significant discount on hourly rates in
+exchange for a commitment to use the instance for a 1 or 3-year term. Suitable for steady-state
+ workloads with predictable usage patterns.
+
+- **Spot Instances**: Bid for unused EC2 capacity at potentially lower prices, but with the risk of
+interruption. Up to 90% savings compared to On-Demand pricing. Ideal for workloads that are flexible
+and can tolerate interruptions, such as batch processing and data analysis.
+
+- **Dedicated Hosts**: Physical servers dedicated for your use, allowing you to use your existing
+server-bound software licenses. Ideal for sensitive workloads that require compliance and regulatory
+requirements, or when you want to use existing software licenses that are not eligible for AWS's
+other pricing models. You have control over the placement of instances  and resource allocation.
+
+---
+
+
+## Conclusion
+Amazon EC2 provides a powerful and flexible compute service that can be tailored to meet the needs
+of a wide variety of applications. Whether you need a small instance for a simple web application
+or a large cluster for high-performance computing, EC2 offers the tools and options to help you
+succeed in the cloud.
 `;
 
 export const allPosts: Record<
@@ -293,5 +417,16 @@ export const allPosts: Record<
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Infrastructure"],
     content: POST_CONTENT_3,
+  },
+  "introduction-to-amazon-ec2": {
+    title:
+      "Introduction to Amazon EC2",
+    excerpt:
+      "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
+    date: "February 9, 2026",
+    readTime: "3 min read",
+    category: "Software Dev",
+    tags: ["Cloud", "AWS", "Infrastructure","Compute", "EC2"],
+    content: POST_CONTENT_4,
   },
 };
