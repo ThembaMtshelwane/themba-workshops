@@ -53,7 +53,7 @@ export const article5 = {
   title: "Amazon EC2 Scalability and Elasticity",
   excerpt: "Learn how to scale your Amazon EC2 instances to meet changing demand.",
   date: "February 16, 2026",
-  readTime: "8 min read",
+  readTime: "6 min read",
 };
 
 export const POST_CONTENT = `
@@ -523,9 +523,9 @@ export const allPosts: Record<
     excerpt:
       "Learn how to scale your Amazon EC2 instances to meet changing demand.",
     date: "February 16, 2026",
-    readTime: "5 min read",
+    readTime: "6 min read",
     category: "Software Dev",
-    tags: ["Cloud", "AWS", "Infrastructure", "Compute", "EC2"],
+    tags: ["Cloud", "AWS", "Compute", "EC2", "Scalability", "Elasticity"],
     content: POST_CONTENT_5,
   },
 };
