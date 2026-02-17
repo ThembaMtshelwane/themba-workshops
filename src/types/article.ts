@@ -47,6 +47,15 @@ export const article4 = {
   readTime: "8 min read",
 };
 
+export const article5 = {
+  id: "5",
+  slug: "amazon-ec2-scalability-and-elasticity",
+  title: "Amazon EC2 Scalability and Elasticity",
+  excerpt: "Learn how to scale your Amazon EC2 instances to meet changing demand.",
+  date: "February 16, 2026",
+  readTime: "8 min read",
+};
+
 export const POST_CONTENT = `
 Imagine you have a client that requires extensive IT services and resources. You might suggest they
 buy the resources (physical servers) and hire an IT team to manage them—the On-Premise Approach. But what if there's
@@ -375,6 +384,88 @@ or a large cluster for high-performance computing, EC2 offers the tools and opti
 succeed in the cloud.
 `;
 
+export const POST_CONTENT_5 = `
+As your application grows, you need to ensure that your infrastructure can adapt with demand.
+For Amazon EC2, this adaptability is achieved through Scalability and Elasticity. These concepts
+allow you to adjust your resources dynamically based on workload requirements.
+
+While often used interchangeably, understanding the distinction between them is key to building
+a cost-effective and reliable infrastructure.
+
+---
+
+## 1. Scalability vs. Elasticity: What’s the Difference?
+
+- **Scalability**: The ability of a system to handle increased load by adding resources.
+It can be achieved through vertical scaling (adding more power to an existing instance) or
+horizontal scaling (adding more instances). Scalability is about the capacity of the system
+to grow. This focuses on the sytem's long-term capacity planning to make sure that it can
+grow and accommodate more users or data as needed. It is often associated with the ability
+to handle growth over time.
+
+- **Elasticity**: The ability of a system to automatically adjust resources in real-time
+based on demand. This procides cost efective nad optimal resorce usage at any given moment.
+Elasticity is about the system's ability to respond to changes in demand quickly and efficiently.
+Scale out during periods of high demaand and scale in during periods of low demand.
+
+Think of scalability as the ability to handle 1 million users and elasticity as the ability to
+adjust resources to handle 100 users at 2 AM and 1 million users at noon without manual intervention.
+
+---
+
+## 2. Amazon EC2 Auto Scaling
+Amazon EC2 Auto Scaling is a service that automatically adjusts the number of EC2 instances in
+based on the changes in the application's demand. This helps implement elasticity. It helps maintain
+the application's availability. It offers two main approaches to scaling:
+
+- **Predictive Scaling**: Uses machine learning to predict future traffic patterns and scales resources
+in advance. For example, if your application experiences regular traffic spikes every day at noon,
+predictive scaling can learn this pattern and automatically add instances before the spike occurs.
+
+- **Dynamic Scaling**: Automatically adjusts the number of instances in response to real-time
+metrics (e.g. CPU utilization, network traffic). For example, if CPU usage exceeds 70% for 5 minutes,
+Auto Scaling can launch additional instances to handle the load.
+
+
+Auto Scaling Groups are used to manage collections of EC2 instances. You can define scaling policies
+that specify when and how to scale your instances based on CloudWatch metrics or scheduled actions.
+To configure an Auto Scaling Group, you need to specify the desired capacity, minimum and maximum number
+of instances, and the scaling policies that determine when to add or remove instances.
+
+- **Minimum Capacity**: The least number of instances that should be running at all times. This ensures
+your application has a baseline level of resources available. Cannot scale down below this number, even
+if demand is low. For example, let's set the minimum capacity to 4. This means that even during periods
+of low demand, there will always be at least 2 instances running to handle any incoming traffic.
+
+![minimum capacity](/article-5-1.webp)
+
+- **Desired Capacity**: The ideal number of instances you want running, enough to handle the expected
+average workload. Auto Scaling will try to maintain this number based on the scaling policies you set. If
+this is not defined, Auto Scaling will use the minimum capacity as the default desired capacity. In the
+example above, if we set the desired capacity to 6, Auto Scaling will try to maintain 6 instances running.
+
+![desired capacity](/article-5-2.webp)
+
+- **Maximum Capacity**: The maximum number of instances that can be running. This prevents overscaling
+and helps control costs. Cannot scale up beyond this number, even if demand is high. Fianlly, if we set
+the maximum capacity to 10, Auto Scaling will never launch more than 10 instances, even if the demand
+spikes significantly.
+
+![maximum capacity](/article-5-3.webp)
+
+---
+
+## Conclusion
+Scalability and Elasticity are critical for ensuring that your application can handle varying levels of
+demand while optimizing costs. Amazon EC2 Auto Scaling provides powerful tools to help you achieve both,
+allowing your infrastructure to grow and adapt seamlessly as your application's needs evolve.
+
+
+
+
+
+`;
+
 export const allPosts: Record<
   string,
   {
@@ -418,14 +509,24 @@ export const allPosts: Record<
     content: POST_CONTENT_3,
   },
   "introduction-to-amazon-ec2": {
-    title:
-      "Introduction to Amazon EC2",
+    title: "Introduction to Amazon EC2",
     excerpt:
       "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
     date: "February 9, 2026",
     readTime: "8 min read",
     category: "Software Dev",
-    tags: ["Cloud", "AWS", "Infrastructure","Compute", "EC2"],
+    tags: ["Cloud", "AWS", "Infrastructure", "Compute", "EC2"],
     content: POST_CONTENT_4,
   },
+  "amazon-ec2-scalability-and-elasticity": {
+    title: "Amazon EC2 Scalability and Elasticity",
+    excerpt:
+      "Learn how to scale your Amazon EC2 instances to meet changing demand.",
+    date: "February 16, 2026",
+    readTime: "5 min read",
+    category: "Software Dev",
+    tags: ["Cloud", "AWS", "Infrastructure", "Compute", "EC2"],
+    content: POST_CONTENT_5,
+  },
 };
+  
