@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const MainLayout = () => {
   return (
