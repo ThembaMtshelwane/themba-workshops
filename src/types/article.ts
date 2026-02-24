@@ -56,6 +56,15 @@ export const article5 = {
   readTime: "6 min read",
 };
 
+export const article6 = {
+  id: "6",
+  slug: "directing-traffic-with-amazon-elastic-load-balancing",
+  title: "Directing Traffic with Amazon Elastic Load Balancing",
+  excerpt: "Learn how to distribute traffic across multiple EC2 instances using Amazon ELB.",
+  date: "February 24, 2026",
+  readTime: "10 min read",
+};
+
 export const POST_CONTENT = `
 Imagine you have a client that requires extensive IT services and resources. You might suggest they
 buy the resources (physical servers) and hire an IT team to manage them—the On-Premise Approach. But what if there's
@@ -466,6 +475,99 @@ allowing your infrastructure to grow and adapt seamlessly as your application's 
 
 `;
 
+export const POST_CONTENT_6 = `
+
+In the world of cloud computing, performance is all about balance. Spreading workloads
+effectively improves the performance of your application. This prevents any single
+resource from becoming overwhelmed by an app's entire workload. By ensuring no single
+instance has to handle the full workload on its own, you create a system that is both
+fast and resilient to traffic spikes.
+
+---
+
+## 1. What is Elastic Load Balancing (ELB)?
+
+Elastic Load Balancing is an AWS service that automatically distributes incoming application traffic
+across multiple resources, such as EC2 instances. This process optimizes both performance and
+reliability, ensuring your users have a seamless experience -preventing long loading times
+and app crashes - during traffic spikes.
+
+As traffic flows in, the ELB acts as a "traffic cop", redirecting requests to the EC2 instances with
+the fewest queued requests. This works hand-in-hand with Auto Scaling Groups, which adjust the number
+of available instances based on the volume of incoming traffic.
+
+---
+
+## 2. Key Benefits of ELB
+Using an ELB provides three primary advantages for cloud architecture:
+
+- **Efficient Traffic Distribution**: It evenly distributes traffic across EC2 instances within
+Auto Scaling Groups. This prevents overloads on any single instance and optimizes overall resource
+utilization.
+
+- **Simplified Management/Decoupling**: It separates the Frontend (FE) from the Backend (BE),
+reducing the need for manual synchronization. The frontend sends everything to the ELB. The ELB
+handles the "handshake" with the backend servers. The frontend doesn't care -and doesn't need to
+know- how many servers are behind the curtain. So no need to manually update the frontend to connect
+to a scalling backend.
+
+- **Automatic Scaling**: The ELB scales its own capacity in response to traffic patterns,
+automatically adjusting to changes in demand without manual intervention. So more requests
+from the frontend will trigger the ELB to scale up and add more backend servers to handle the load, and
+vice versa.
+
+---
+
+## 3. Mastering Traffic: Common Routing Methods
+To optimize how traffic is handled, ELB uses several routing methods that work together for
+efficient management:
+
+- **Round Robin**: Distributes traffic evenly across all available servers in a cyclic manner.
+The simplest method and most common method used by load balancers to ensure every server gets its turn.
+For example, if you have 3 servers, the first request goes to Server A, the second to Server B, the
+third to Server C, and then it starts over with Server A again. This assumes all requests are similar in
+size and processing time. Only use standard Round Robin when your EC2 instances are the same type and
+size and have similar workloads.
+
+- **Weighted Round Robin**: Similar to Round Robin but allows you to assign different weights to servers
+based on their capacity. Servers with higher weights receive more traffic. This is useful when you have
+a mix of instance types or sizes and want to optimize resource utilization.
+For example, if Server A has a weight of 2 and Server B has a weight of 1, Server A will receive twice as
+much traffic as Server B.
+
+- **Least Connections**: Directs traffic to the server with the fewest active connections. This assumes
+requests can vary in processing time, for example one request is for downloading a 1GB file and the
+other is for a small text file, so it helps ensure that servers with shorter tasks can handle more requests
+while servers with longer tasks aren't overwhelmed. For example, if Server A has 7 active connections,
+Server B has 6 active connections and Server C is empty (0 active connections), the next request goes
+to Server C, where in a Round Robin scenario it would have gone to Server A.
+
+- **IP Hash**: Routes traffic based on the client's IP address, ensuring that a user consistently
+connects to the same server. The Load Balancer takes the client’s unique IP address (like 192.168.1.50)
+and runs it through a mathematical formula called a Hash. This formula converts the IP into a specific
+number that "points" to one of your servers. Useful for session persistence. For example, if User 1 with IP
+192.168.1.50 connects to the Load Balancer, it will always route to the same server, Server A and User 2 with IP
+192.168.1.51 connects to the Load Balancer, it will always route to Server B.
+
+- **Least Response Time**: Sends traffic to the server with the fastest average response time,
+optimizing for performance.This is the "smartest" and most performance-focused routing method, as it takes
+into account the number of active connections and response times of each server. From these metrics it
+performs a quicky calculation and redirects the incoming request to the most responsive server. For
+example, if Server A has 100 active connections (Browsing text) and an average response time of 30ms,
+Server B has 10 active connections (2 are uploading 4K video) and an average response time of 250ms,
+and Server C has 50 active connections (Standard usage) and an average response time of 80ms, the next
+request would go to Server A, as it has the lowest response time.
+
+
+---
+
+## Conclusion
+By implementing Elastic Load Balancing, you aren't just managing traffic; you are building a foundation
+for a highly available and fault-tolerant application. Whether you're using simple Round Robin or
+advanced Least Response Time routing, ELB ensures your AWS infrastructure stays live under imense traffic.
+
+`;
+
 export const allPosts: Record<
   string,
   {
@@ -527,6 +629,16 @@ export const allPosts: Record<
     category: "Software Dev",
     tags: ["Cloud", "AWS", "Compute", "EC2", "Scalability", "Elasticity"],
     content: POST_CONTENT_5,
+  },
+  "directing-traffic-with-amazon-elastic-load-balancing": {
+    title: "Directing Traffic with Amazon Elastic Load Balancing",
+    excerpt:
+      "Learn how to distribute traffic across multiple EC2 instances using Elastic Load Balancing.",
+    date: "February 24, 2026",
+    readTime: "10 min read",
+    category: "Software Dev",
+    tags: ["Cloud", "AWS", "Compute", "EC2", "Scalability", "Elasticity", "Load Balancing"],
+    content: POST_CONTENT_6,
   },
 };
   
