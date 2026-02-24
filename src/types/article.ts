@@ -564,7 +564,7 @@ request would go to Server A, as it has the lowest response time.
 ## Conclusion
 By implementing Elastic Load Balancing, you aren't just managing traffic; you are building a foundation
 for a highly available and fault-tolerant application. Whether you're using simple Round Robin or
-advanced Least Response Time routing, ELB ensures your AWS infrastructure stays live under imense traffic.
+advanced Least Response Time routing, ELB ensures your AWS infrastructure stays live under immense traffic.
 
 `;
 
