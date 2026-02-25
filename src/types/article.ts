@@ -236,9 +236,11 @@ services for users within a specific geographic area.
 ---
 
 ## 3. High Availability vs. Fault Tolerance
-While often used interchangeably, your notes highlight a key distinction:\n
+While often used interchangeably, here is a distinction between the two:\n
 - ***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy.\n
-- ***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails, with zero downtime or data loss.
+- ***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails,
+with zero downtime or data loss. This manifests through each availability zone consisting of multiple data centers,
+so if one goes down, the others can take over seamlessly.
 
 ---
 
