@@ -246,6 +246,7 @@ The goal is to have the system running 99.99% of the time.
 or data loss. This requires complex, "hot" architectures where backup resources are always in sync.
 This often manifests through deploying across multiple Regions, ensuring that even the total loss of a geographic
 area doesn't interrupt the user experience.
+
 ---
 
 ## 4. The AWS Shared Responsibility Model
