@@ -219,12 +219,14 @@ environment available today. It is built on three hierarchical levels:
 
 ### 1. Data Centers
   At the most basic level, AWS infrastructure consists of physical Data Centers. These are the
-  physical buildings that house the servers, storage, and networking equipment.
+  physical buildings that house the servers, storage, and networking equipment. These data centers
+  are equipped with redundant power, networking, and cooling to ensure high availability.
+  They are located in various regions around the world to provide low-latency access to users globally.
 
 ### 2. Availability Zones (AZs)
-An Availability Zone is one or more discrete data centers with redundant power, networking, and connectivity.
-It is a best practice to distribute your resources across multiple AZs. This provides High Availability (HA)
-and Fault Tolerance (FT), ensuring that if one data center fails, your application remains online.
+An Availability Zone is a logical data center in a region that is isolated from failures in other AZs. Each AZ consists of
+one or more discrete data centers. This design allows for high availability and fault tolerance. If one AZ goes down,
+the others can continue to operate without interruption.
 
 ### 3. Regions
 A Region is a physical location in the world where AWS clusters multiple Availability Zones. Each Region consists
@@ -237,16 +239,19 @@ services for users within a specific geographic area.
 
 ## 3. High Availability vs. Fault Tolerance
 While often used interchangeably, here is a distinction between the two:\n
-- ***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy.\n
-- ***Fault Tolerance:*** A higher standard where the system can continue operating even if a major component fails,
-with zero downtime or data loss. This manifests through each availability zone consisting of multiple data centers,
-so if one goes down, the others can take over seamlessly.
-
+- ***High Availability:*** Focuses on ensuring a system is "up" as much as possible, often through redundancy. This
+means if a server fails, another one can take over seamlessly. This manifests through deploying across multiple Availability Zones.
+The goal is to have the system running 99.99% of the time.
+- ***Fault Tolerance:*** A higher standard where the system operates through a failure with zero downtime
+or data loss. This requires complex, "hot" architectures where backup resources are always in sync.
+This often manifests through deploying across multiple Regions, ensuring that even the total loss of a geographic
+area doesn't interrupt the user experience.
 ---
 
 ## 4. The AWS Shared Responsibility Model
-Security and compliance are a "shared" effort between AWS and the customer. This model helps reduce the customer’s operational burden as AWS operates,
-manages, and controls the components from the host operating system down to the physical security of the facilities.
+Security and compliance are a "shared" effort between AWS and the customer. This model helps reduce the customer’s
+operational burden as AWS operates, manages, and controls the components from the host operating system down to the
+physical security of the facilities.
 
 ***AWS Responsibility: "Security OF the Cloud"***
 
@@ -272,7 +277,9 @@ AWS handles more of the "Shared" tasks like OS patching, whereas if you use EC2 
 ---
 
 ## Conclusion
-AWS provides the **Global Infrastructure** to make your applications highly available and fault-tolerant, but the **Shared Responsibility Model** ensures you remain the architect of your own security. Success in the cloud is found at the intersection of robust infrastructure and proactive management.
+AWS provides the **Global Infrastructure** to make your applications highly available and fault-tolerant, but the **Shared Responsibility
+Model** ensures you remain the architect of your own security. Success in the cloud is found at the intersection of robust infrastructure
+and proactive management.
 
 `;
 
