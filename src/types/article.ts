@@ -3,8 +3,12 @@ export interface IArticle {
   slug: string;
   title: string;
   excerpt: string;
+  content: string;
   date: string;
   readTime: string;
+  category: string;
+  author?: string;
+  tags?: string[];
 }
 
 export const article = {
@@ -51,7 +55,8 @@ export const article5 = {
   id: "5",
   slug: "amazon-ec2-scalability-and-elasticity",
   title: "Amazon EC2 Scalability and Elasticity",
-  excerpt: "Learn how to scale your Amazon EC2 instances to meet changing demand.",
+  excerpt:
+    "Learn how to scale your Amazon EC2 instances to meet changing demand.",
   date: "February 16, 2026",
   readTime: "6 min read",
 };
@@ -60,7 +65,8 @@ export const article6 = {
   id: "6",
   slug: "directing-traffic-with-amazon-elastic-load-balancing",
   title: "Directing Traffic with Amazon Elastic Load Balancing",
-  excerpt: "Learn how to distribute traffic across multiple EC2 instances using Amazon ELB.",
+  excerpt:
+    "Learn how to distribute traffic across multiple EC2 instances using Amazon ELB.",
   date: "February 24, 2026",
   readTime: "10 min read",
 };
@@ -578,20 +584,10 @@ advanced Least Response Time routing, ELB ensures your AWS infrastructure stays 
 
 `;
 
-export const allPosts: Record<
-  string,
-  {
-    title: string;
-    excerpt: string;
-    content: string;
-    date: string;
-    readTime: string;
-    category: string;
-    author?: string;
-    tags?: string[];
-  }
-> = {
+export const allPosts: Record<string, IArticle> = {
   "what-is-cloud-computing": {
+    id: "1",
+    slug: "what-is-cloud-computing",
     title: "What is Cloud Computing?",
     excerpt: "Exploring cloud computing and how it relates to clients",
     date: "January 19, 2026",
@@ -601,6 +597,8 @@ export const allPosts: Record<
     content: POST_CONTENT,
   },
   "what-is-a-cloud-service-provider": {
+    id: "2",
+    slug: "what-is-a-cloud-service-provider",
     title: "What is a Cloud Service Provider?",
     excerpt: "Exploring cloud computing and how it relates to clients",
     date: "January 26, 2026",
@@ -610,6 +608,8 @@ export const allPosts: Record<
     content: POST_CONTENT_2,
   },
   "understanding-the-foundation-of-aws-infrastructure-and-responsibility": {
+    id: "3",
+    slug: "understanding-the-foundation-of-aws-infrastructure-and-responsibility",
     title:
       " Understanding the Foundation of AWS: Infrastructure and Responsibility",
     excerpt:
@@ -621,6 +621,8 @@ export const allPosts: Record<
     content: POST_CONTENT_3,
   },
   "introduction-to-amazon-ec2": {
+    id: "4",
+    slug: "introduction-to-amazon-ec2",
     title: "Introduction to Amazon EC2",
     excerpt:
       "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
@@ -631,6 +633,8 @@ export const allPosts: Record<
     content: POST_CONTENT_4,
   },
   "amazon-ec2-scalability-and-elasticity": {
+    id: "5",
+    slug: "amazon-ec2-scalability-and-elasticity",
     title: "Amazon EC2 Scalability and Elasticity",
     excerpt:
       "Learn how to scale your Amazon EC2 instances to meet changing demand.",
@@ -641,14 +645,23 @@ export const allPosts: Record<
     content: POST_CONTENT_5,
   },
   "directing-traffic-with-amazon-elastic-load-balancing": {
+    id: "6",
+    slug: "directing-traffic-with-amazon-elastic-load-balancing",
     title: "Directing Traffic with Amazon Elastic Load Balancing",
     excerpt:
       "Learn how to distribute traffic across multiple EC2 instances using Elastic Load Balancing.",
     date: "February 24, 2026",
     readTime: "10 min read",
     category: "Software Dev",
-    tags: ["Cloud", "AWS", "Compute", "EC2", "Scalability", "Elasticity", "Load Balancing"],
+    tags: [
+      "Cloud",
+      "AWS",
+      "Compute",
+      "EC2",
+      "Scalability",
+      "Elasticity",
+      "Load Balancing",
+    ],
     content: POST_CONTENT_6,
   },
 };
-  

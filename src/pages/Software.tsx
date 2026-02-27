@@ -1,6 +1,6 @@
 import ArticleCard from "../components/ArticleCard";
 import SeriesCard from "../components/SeriesCard";
-import { article, article2, article3, article4, article5, article6 } from "../types/article";
+import { allPosts } from "../types/article";
 
 const Software = () => {
   return (
@@ -34,12 +34,9 @@ const Software = () => {
           Articles
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-8">
-          <ArticleCard article={article6} />
-          <ArticleCard article={article5} />
-          <ArticleCard article={article4} />
-          <ArticleCard article={article3} />
-          <ArticleCard article={article2} />
-          <ArticleCard article={article} />
+          {Object.entries(allPosts).reverse().map(([slug, post]) => (
+            <ArticleCard key={slug} article={post} />
+          ))}
         </div>
       </div>
     </section>

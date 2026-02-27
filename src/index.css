@@ -132,6 +132,10 @@
     border-color: var(--color-border);
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -148,8 +152,8 @@
     font-weight: 600;
   }
 
-  h1{
-    font-size:48px;
+  h1 {
+    font-size: 48px;
   }
   h2 {
     font-size: 32px;

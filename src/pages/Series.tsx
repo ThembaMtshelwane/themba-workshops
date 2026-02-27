@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import ArticleCard from "../components/ArticleCard";
 import { ArrowLeft } from "lucide-react";
-import { article, article2, article3, article4, article5, article6 } from "../types/article";
+import { allPosts } from "../types/article";
 
 const Series = () => {
   return (
@@ -23,14 +23,21 @@ const Series = () => {
         <ArrowLeft className="w-4 h-4" />
         Software Dev Home
       </Link>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-2 pb-8 mt-4">
-        <ArticleCard article={article6} />
-        <ArticleCard article={article5} />
-        <ArticleCard article={article4} />
-        <ArticleCard article={article3} />
-        <ArticleCard article={article2} />
-        <ArticleCard article={article} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 px-2 pb-2 mt-4">
+        {Object.entries(allPosts)
+          .reverse()
+          .map(([slug, post]) => (
+            <ArticleCard key={slug} article={post} />
+          ))}
       </div>
+
+      <Link
+        to="/software"
+        className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors my-8"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Software Dev Home
+      </Link>
     </div>
   );
 };
