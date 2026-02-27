@@ -11,66 +11,6 @@ export interface IArticle {
   tags?: string[];
 }
 
-export const article = {
-  id: "1",
-  slug: "what-is-cloud-computing",
-  title: "What is Cloud Computing?",
-  excerpt: "Exploring cloud computing and how it relates to clients.",
-  date: "January 19, 2026",
-  readTime: "5 min read",
-};
-
-export const article2 = {
-  id: "2",
-  slug: "what-is-a-cloud-service-provider",
-  title: "What is a Cloud Service Provider?",
-  excerpt:
-    'Exploring the ecosystem of Cloud Service Providers (CSPs) and how they deliver virtualized "building blocks".',
-  date: "January 26, 2026",
-  readTime: "4 min read",
-};
-
-export const article3 = {
-  id: "3",
-  slug: "understanding-the-foundation-of-aws-infrastructure-and-responsibility",
-  title:
-    "Understanding the Foundation of AWS: Infrastructure and Responsibility",
-  excerpt:
-    "This covers how AWS became a global cloud leader, the hierarchical structure of its Global Infrastructure, and the Shared Responsibility Model",
-  date: "February 3, 2026",
-  readTime: "6 min read",
-};
-
-export const article4 = {
-  id: "4",
-  slug: "introduction-to-amazon-ec2",
-  title: "Introduction to Amazon EC2",
-  excerpt:
-    "An overview of Amazon Elastic Compute Cloud (EC2), a core AWS service for running virtual machines in the cloud.",
-  date: "February 9, 2026",
-  readTime: "8 min read",
-};
-
-export const article5 = {
-  id: "5",
-  slug: "amazon-ec2-scalability-and-elasticity",
-  title: "Amazon EC2 Scalability and Elasticity",
-  excerpt:
-    "Learn how to scale your Amazon EC2 instances to meet changing demand.",
-  date: "February 16, 2026",
-  readTime: "6 min read",
-};
-
-export const article6 = {
-  id: "6",
-  slug: "directing-traffic-with-amazon-elastic-load-balancing",
-  title: "Directing Traffic with Amazon Elastic Load Balancing",
-  excerpt:
-    "Learn how to distribute traffic across multiple EC2 instances using Amazon ELB.",
-  date: "February 24, 2026",
-  readTime: "10 min read",
-};
-
 export const POST_CONTENT = `
 Imagine you have a client that requires extensive IT services and resources. You might suggest they
 buy the resources (physical servers) and hire an IT team to manage them—the On-Premise Approach. But what if there's
@@ -507,6 +447,8 @@ Elastic Load Balancing is an AWS service that automatically distributes incoming
 across multiple resources, such as EC2 instances. This process optimizes both performance and
 reliability, ensuring your users have a seamless experience -preventing long loading times
 and app crashes - during traffic spikes.
+
+![elastic load balancing](/article-6-1.webp)
 
 As traffic flows in, the ELB acts as a "traffic cop", redirecting requests to the EC2 instances with
 the fewest queued requests. This works hand-in-hand with Auto Scaling Groups, which adjust the number
