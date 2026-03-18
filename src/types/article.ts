@@ -526,6 +526,100 @@ advanced Least Response Time routing, ELB ensures your AWS infrastructure stays 
 
 `;
 
+export const POST_CONTENT_7 = `
+
+
+In a traditional, tightly coupled architecture, applications communicate directly. If Application A sends
+a message to Application B while Application B is offline or overwhelmed, the message is either lost or Application A
+is forced to wait (blocking). It’s like throwing a ball to someone who isn’t looking; if they don’t catch it
+immediately, the pass fails.
+
+To solve this, we introduce asynchronous messaging. By placing a buffer—a managed, ordered list—between
+services, this ensures that Application B can retrieve and process messages at its own pace. This "decouples"
+the services, allowing them to operate independently and reliably.
+
+---
+
+## 1. Tightly Coupled vs. Decoupled Architectures.
+
+- **Tightly Coupled Architecture**: Services are directly connected and dependent on each other. If one service
+fails or is slow, it can cause a domino effect, impacting the entire system. For example, if Application A sends
+a request to Application B and B is down, A will either fail or be forced to wait indefinitely.
+
+![Tightly Coupled Architecture](/article-7-1.webp)
+
+- **Decoupled Architecture**: Services communicate through an intermediary (like a message queue), allowing them
+to operate independently. If one service is down, messages can be stored and processed later without affecting
+the other services. For example, if Application A sends a message to a message queue, Application B can retrieve
+and process the message when it is back up, ensuring that no messages are lost and that A can continue functioning
+without waiting for B.
+
+![Decoupled Architecture](/article-7-2.webp)
+
+Decoupling services through messaging and queues enhances the resilience and scalability of applications, allowing
+them to handle varying workloads and failures gracefully.
+
+---
+
+## 2. The AWS Messaging and Queuing Ecosystem.
+
+AWS provides three primary services to facilitate this decoupling and manage the flow of data:
+
+### 2.1 **Amazon Simple Queue Service (SQS)**:
+SQS is one of the oldest and most reliable services in the AWS arsenal. It acts as a temporary repository for messages moving
+between software components.
+- It can send, store, and receive messages between applications/services.
+- Automatically scales to handle any volume of messages without manual intervention.
+- Acts as an intermediary between Application A (the Producer) and Application B (the Consumer). This results in the applications
+being decoupled, allowing them to work independently.
+- The Producers' messages are stored here until the Consumer is ready to process and delete them.
+- If the Consumer fails or is busy, the messages remain safely in the queue, preventing data loss and allowing the Producer
+to keep working unaffected.
+- It offers two types of queues: Standard (best effort ordering and at-least-once delivery) and FIFO (guaranteed ordering and
+exactly-once processing).
+
+
+![Tightly Coupled Architecture](/article-7-3.webp)
+
+
+### 2.2 **Amazon Simple Notification Service (SNS)**:
+SNS is a "Pub/Sub" (Publisher/Subscriber) service. Instead of a queue where one Consumer pulls a message, SNS "pushes" messages
+to multiple subscribers (e.g., email, SMS, Lambda functions) instantly. It is designed for one-to-many communication.
+- Logic is centered around Topics. A predefined grouping or set of messages that a subscriber can subscribe to. Topics are made of
+related messages, for example, for an e-commerce store, a user can choose to subscribe to an Electronics topic, and hence will get emails for that topic
+- Allows subscribers to receive only a subset of messages from a topic based on "Filter Policies" attached to the subscription.
+- Can send messages to Lambda, SQS, HTTP/S endpoints, Email, SMS, and Mobile Push.
+- Designed for massive scale and very low latency. It is the go-to for high-fanout scenarios (e.g., millions of mobile push notifications).
+
+![Tightly Coupled Architecture](/article-7-4.webp)
+
+
+### 2.3 **Amazon EventBridge**:
+EventBridge is a Serverless Event Bus. It is the modern evolution of cloud messaging, designed to connect applications using
+"Events." It allows you to build event-driven architectures that react to changes in your environment in real-time.
+
+- Acts as a central "router." It receives events from sources and applies Rules to determine where that data should go.
+- It can automatically discover and store event structures (schemas), making it easier for developers to know exactly what data a
+message contains.
+- Offers highly granular routing. You can write complex rules that look deep into the JSON body of an event to decide the target.
+- Can modify or "re-map" the JSON payload before it reaches the target, which is useful if the destination expects a specific format.
+- Unique ability to ingest events directly from third-party services like Zendesk, Shopify, Datadog, or PagerDuty without writing custom code.
+- Includes "EventBridge Scheduler," allowing you to trigger actions at specific times (similar to a distributed Cron job).
+
+![Tightly Coupled Architecture](/article-7-5.webp)
+
+
+---
+
+## Conclusion
+Messaging and queuing services in the cloud are essential for building modern, scalable, and resilient applications.
+By decoupling services and enabling asynchronous communication, you can create systems that are more flexible and
+better equipped to handle varying workloads and failures.
+`;
+
+
+
+
 export const allPosts: Record<string, IArticle> = {
   "what-is-cloud-computing": {
     id: "1",
@@ -605,5 +699,18 @@ export const allPosts: Record<string, IArticle> = {
       "Load Balancing",
     ],
     content: POST_CONTENT_6,
+  },
+  "messaging-and-queues-in-the-cloud": {
+    id: "7",
+    slug: "messaging-and-queues-in-the-cloud",
+    title:
+      "Messaging and Queuing: From Tightly Coupled to Decoupled Architectures.",
+    excerpt:
+      "Explore how to implement messaging and queuing solutions in the cloud for reliable communication between applications.",
+    date: "March 18, 2026",
+    readTime: "7 min read",
+    category: "Software Dev",
+    tags: ["Cloud", "AWS", "Messaging", "Queues"],
+    content: POST_CONTENT_7,
   },
 };
